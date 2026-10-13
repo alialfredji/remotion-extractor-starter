@@ -106,6 +106,6 @@ npm test
 
 Tests use real FFmpeg-generated media to check timestamped extraction, scene candidates, audio/no-audio behavior, dense samples and clip trimming. CI runs checks and a small Remotion render.
 
-Initial validation: media integration tests, TypeScript checks, skill validation and Remotion bundling passed. Rendering could not be verified in the authoring environment because the downloaded browser exited with SIGTRAP. Run the render check on your machine or review GitHub Actions before relying on rendering.
+Initial validation: media integration tests, TypeScript checks, skill validation and Remotion bundling passed. The Remotion rendering smoke test also passed in GitHub Actions. The authoring environment's browser exited with SIGTRAP, so rendering was verified in CI instead. A full reference-specific reconstruction still needs visual review.
 
 Inputs, extracted evidence, private assets, API keys and renders are ignored by git. Source code and skills belong in the repository. Remotion and the distributed media binaries retain their own licenses; check [Remotion licensing](https://www.remotion.dev/license) for your intended commercial usage.

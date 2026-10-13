@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analyze Video"
+  short_description: "Inspect video evidence and plan an editable rebuild"
+  default_prompt: "Use $analyze-video to analyze my reference video and create an evidence-based reconstruction plan."

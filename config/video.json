@@ -1,0 +1,11 @@
+{
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "background": "#101010",
+  "accent": "#175cff",
+  "scenes": [
+    {"duration": 90, "title": "Your product.", "subtitle": "One clear idea.", "media": null},
+    {"duration": 90, "title": "Show what matters.", "subtitle": "Replace this with your story.", "media": null}
+  ]
+}

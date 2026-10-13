@@ -1,0 +1,12 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {run} from './media.mjs';
+const root=fileURLToPath(new URL('../',import.meta.url));
+const config=JSON.parse(await fs.readFile(path.join(root,'config/video.json'),'utf8'));
+for (const name of ['width','height','fps']) if (!Number.isInteger(config[name]) || config[name]<1 || config[name]>(name==='fps'?120:8192)) throw new Error(`Invalid ${name}`);
+if (config.width%2 || config.height%2) throw new Error('H.264 output needs even dimensions.');
+if (!Array.isArray(config.scenes) || !config.scenes.length || config.scenes.some(s=>!Number.isInteger(s.duration)||s.duration<2||typeof s.title!=='string'||typeof s.subtitle!=='string'||(s.media && (!['image','video'].includes(s.media.type)||typeof s.media.src!=='string'||s.media.src.startsWith('/')||s.media.src.split(/[\\/]/).includes('..'))))) throw new Error('Invalid scenes. Use durations >=2 frames and media paths relative to public/.');
+await fs.mkdir(path.join(root,'out'),{recursive:true});
+const cli=path.join(root,'node_modules','@remotion','cli','remotion-cli.js');
+await run(process.execPath,[cli,'render','src/index.ts','ProductVideo','out/video.mp4','--props=config/video.json',...process.argv.slice(2)],{capture:false});

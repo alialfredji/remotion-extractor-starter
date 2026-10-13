@@ -1,0 +1,14 @@
+node_modules/
+input/*
+!input/.gitkeep
+work/
+out/
+build/
+public/assets/*
+!public/assets/.gitkeep
+.env
+.env.*
+*.log
+.DS_Store
+.claude/skills/
+.cursor/skills/

@@ -1,0 +1,5 @@
+---
+description: Video analysis and Remotion reconstruction workflow
+alwaysApply: true
+---
+Read AGENTS.md. Use .agents/skills/analyze-video/SKILL.md for reference analysis and .agents/skills/rebuild-video/SKILL.md for reconstruction. Run npm run agents to install the project-local Cursor skill copies.

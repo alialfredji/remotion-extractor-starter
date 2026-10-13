@@ -1,0 +1,36 @@
+{
+  "name": "remotion-extractor-starter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "setup": "npm install && npm run agents && npm run doctor",
+    "agents": "node scripts/agents.mjs",
+    "doctor": "node scripts/video.mjs doctor",
+    "extract": "node scripts/video.mjs extract",
+    "focus": "node scripts/video.mjs focus",
+    "clip": "node scripts/video.mjs clip",
+    "compare": "node scripts/video.mjs compare",
+    "studio": "remotion studio src/index.ts",
+    "render": "node scripts/render.mjs",
+    "check": "tsc --noEmit",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.535",
+    "@remotion/renderer": "4.0.535",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.535"
+  },
+  "optionalDependencies": {
+    "ffmpeg-static": "5.3.0",
+    "@ffprobe-installer/ffprobe": "2.1.2"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/node": "^22.0.0",
+    "typescript": "~5.9.3"
+  }
+}

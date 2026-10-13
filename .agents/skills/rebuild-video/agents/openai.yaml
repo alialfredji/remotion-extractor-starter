@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rebuild Video"
+  short_description: "Recreate and adapt a video with editable Remotion scenes"
+  default_prompt: "Use $rebuild-video to adapt the analyzed reference to my product and verify the rendered result."
